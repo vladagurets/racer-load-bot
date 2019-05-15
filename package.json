@@ -8,6 +8,8 @@
   "author": "Vlasyslav Ohirenko",
   "license": "MIT",
   "dependencies": {
+    "bluebird": "^3.5.4",
+    "colors": "^1.3.3",
     "racer": "^0.9.3",
     "sharedb": "^1.0.0-beta.22",
     "ws": "^7.0.0"
