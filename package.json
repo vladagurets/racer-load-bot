@@ -1,0 +1,11 @@
+{
+  "name": "racer-load-bot",
+  "version": "1.0.0",
+  "description": "Bot for loas-testing for apps that use derby.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vlasyslav Ohirenko",
+  "license": "ISC"
+}
