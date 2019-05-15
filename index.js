@@ -1,20 +1,25 @@
-const racer = require('racer')
-const {Model} = racer
-// Apply new prototypes to model
+// Save opts to global
+require('./lib/getOptions')
+
 require('./lib/connection')
 
-const {_createConnection, _destroyConnection} = require('./utils/connectionHelper')
-const {_getOptsFromArgs, _getDefaultOpts} = require('./utils/processHelper')
+const {rnd} = require('./utils/actionHelper')
+const User = require('./lib/user')
 
-global._opts = Object.assign({}, _getDefaultOpts(), _getOptsFromArgs())
+var activeUsers = []
 
-var connections = []
-
-function main () {
-  // connect n users to ws
+async function main () {
   for (let i = 0; i < global._opts.connections; i++) {
-    connections.push(_createConnection(`Connection #${i + 1}`))
+    activeUsers.push(new User({
+      name: nameGenerator(),
+      createdAt: new Date().valueOf(),
+      lifeTime: rnd(1 * 60) * 1000
+    }))
   }
+}
+
+function nameGenerator () {
+  return '_' + Math.random().toString(36).substr(2, 9)
 }
 
 main()

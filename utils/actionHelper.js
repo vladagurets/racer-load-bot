@@ -1,21 +1,22 @@
-async function getDocs (model, collection, docs) {
-  const $docs = model.query(collection, {_id: {$in: docs.map(doc => doc.id)}})
+
+async function createDocs (model, collection) {
+  // create your custom docs
+}
+
+async function getDocs (model, collection) {
+  const $docs = model.query(collection, {$limit: rnd(100)})
   await model.fetchAsync($docs)
   const docs = $docs.get()
   await model.unfetchAsync($docs)
   return docs
 }
 
-async function createDocs (model, collection) {
- 
-}
-
 async function updateDocs (model, collection, docs) {
-
+  // update your custom docs
 }
 
 async function removeDocs (model, collection, docs) {
-
+  // rm your custom docs
 }
 
 function rnd (max) {
@@ -23,5 +24,9 @@ function rnd (max) {
 }
 
 module.exports = {
-  getDocs
+  createDocs,
+  getDocs,
+  updateDocs,
+  removeDocs,
+  rnd
 }

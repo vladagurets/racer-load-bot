@@ -1,9 +1,9 @@
 const racer = require('racer')
 const {Model} = racer
 
-function _createConnection (name) {
+function _createConnection () {
   const model = new Model()
-  model.createConnection({url: global._opts.wsUrl, name})
+  model.createConnection({url: global._opts.wsUrl})
   return model
 }
 
