@@ -1,5 +1,5 @@
 /**
- * @returns {object} of options from command line
+ * @returns {object} with options from command line
  */
 function _getOptsFromArgs () {
   const params = {}
@@ -15,6 +15,18 @@ function _getOptsFromArgs () {
   return params
 }
 
+/**
+ * @returns {object} with default options
+ */
+function _getDefaultOpts () {
+  return {
+    wsUrl: 'http://localhost:3000/channel',
+    collections: [],
+    connections: 0
+  }
+}
+
 module.exports = {
-  _getOptsFromArgs
+  _getOptsFromArgs,
+  _getDefaultOpts
 }

@@ -1,11 +1,20 @@
-const {_getOptsFromArgs} = require('./utils/processHelper')
+const racer = require('racer')
+const {Model} = racer
+// Apply new prototypes to model
+require('./lib/connection')
 
-const _opts = _getOptsFromArgs()
-console.log(_opts);
+const {_createConnection, _destroyConnection} = require('./utils/connectionHelper')
+const {_getOptsFromArgs, _getDefaultOpts} = require('./utils/processHelper')
 
+global._opts = Object.assign({}, _getDefaultOpts(), _getOptsFromArgs())
 
-// TODO:
-// connecter to racer's ws logic
-// connections generator
-// make actions through ws
-// parrallel
+var connections = []
+
+function main () {
+  // connect n users to ws
+  for (let i = 0; i < global._opts.connections; i++) {
+    connections.push(_createConnection(`Connection #${i + 1}`))
+  }
+}
+
+main()

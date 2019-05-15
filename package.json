@@ -7,5 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Vlasyslav Ohirenko",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "racer": "^0.9.3",
+    "sharedb": "^1.0.0-beta.22",
+    "ws": "^7.0.0"
+  }
 }
