@@ -12,3 +12,8 @@ Uses for load-tesitng of sharedb server.
 *Example:*  ```node index wsUrl=wss://my-example-app.io/ws connections=100 collections=images,files,users lifeTime=5``` 
 - It'll generate 100 *user's* connection
 - Each user will interact with random collection from *collections* param for user's *lifeTime* session
+
+
+TODO:
+  - Add create, update, remove actions
+  - Add logs for average actions count per minute
