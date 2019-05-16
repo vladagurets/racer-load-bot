@@ -14,6 +14,7 @@ Uses for load-tesitng of sharedb server.
 - Each user will interact with random collection from *collections* param for user's *lifeTime* session
 
 
+
 TODO:
   - Add create, update, remove actions
   - Add logs for average actions count per minute
