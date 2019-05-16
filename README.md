@@ -15,7 +15,7 @@ Uses for load-tesitng of sharedb server.
 
 
 
-#TODO:
+# TODO:
   - Add create, update, remove actions
   - Add logs for average actions count per minute
   - Warnings for empty / incorrect options
